@@ -1,2 +1,1 @@
-Alec Jones - Quantitative Management Modeling
-username - ajone149
+Alec Jones (ajone149) - Quantitative Management Modeling
