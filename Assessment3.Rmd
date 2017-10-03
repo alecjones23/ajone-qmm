@@ -1,0 +1,30 @@
+---
+title: "Assessment3"
+output: html_notebook
+---
+```{r}
+x <- read.lp("Assessment3.lp")
+x
+solve(x)
+get.objective(x)
+get.variables(x)
+get.constraints(x)
+get.sensitivity.objex(x)
+get.sensitivity.rhs(x)
+
+#Objective function - Minimizing the cost of units purchased per month under 200 + cost of units stored per month + discounted price of units purchased over 200 per month
+
+# x1 - number of units purchased <= 200
+# y1 - number of units purchased > 200
+# s1 - number of units stored in a given month
+# b1 - binary value that will equal 1 if x1 = 200
+
+#The first set of constraints limit the units purchased to be between 0 and 200. It stops at 200 because all purchases greater than that are at a discounted price.
+
+#The second set of constraints takes the total units purchased and subtracts how many units were stored. These stored units would also carry on to the next month and would be added to the units purchased in that month. 
+
+#The third set of constraints uses a binary variable to satisfy the equation. x1 can go to a max of 200. If it reaches the max of 200, then b1 becomes a 1 in order to satisfy the equation. If x1 is anything < 200, b1 will become 0 to satisfy the equation. 
+
+#The fourth set of constraints subtracts a M value from y1 (the number of units purchased over 200). R recognizes the number is too large and will try to ignore it to make a feasible solution. 
+```
+
